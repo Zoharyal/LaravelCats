@@ -39,9 +39,9 @@ class AdminController extends Controller
         $vignette->description = $request->input('description');
         $vignette->save();
         $vignettes = Vignette::all();
-        return back()->with('message', 'Vignette crée');
+        return redirect()->action('AdminController@index')->with('message', 'Vignette crée');
     }
-    
+
     public function delete($id) {
         $vignette = Vignette::find($id);
         $vignette->delete();
@@ -65,8 +65,7 @@ class AdminController extends Controller
         $vignette->legende = $request->input('legende');
         $vignette->description = $request->input('description');
         $vignette->save();
-        // return view('index', ['vignettes' => $vignettes])->with('message', 'Modification effectuée');
-        return back()->with('message', 'Modification effectuée');
+        return redirect()->action('AdminController@index')->with('message', 'Modification effectuée');
     }
 
 }

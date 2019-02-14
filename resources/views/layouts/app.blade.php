@@ -52,7 +52,10 @@
                                 </li>
                             @endif
                         @else
-                        <li class="nav-item">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('create') }}">Creer</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('adminHome') }}">Home</a>
                             </li>
                             <li class="nav-item">
